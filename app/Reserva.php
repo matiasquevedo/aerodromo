@@ -9,7 +9,7 @@ class Reserva extends Model
     //
     protected $table = "reservas";
 
-    protected $fillable = ['modelo','fecha','horas','avion_id','user_id'];
+    protected $fillable = ['modelo','fecha','hora_desde','hora_hasta','avion_id','user_id'];
 
     public function user(){
     	return $this->belongsTo('App\User');

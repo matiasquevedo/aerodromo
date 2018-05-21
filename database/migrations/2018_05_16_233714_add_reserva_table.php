@@ -17,7 +17,8 @@ class AddReservaTable extends Migration
         Schema::create('reservas', function (Blueprint $table) {
             $table->increments('id');
             $table->date('fecha');
-            $table->string('horas');
+            $table->string('hora_desde');
+            $table->string('hora_hasta');
             $table->integer('avion_id')->unsigned();
             $table->integer('user_id')->unsigned();
             $table->rememberToken();

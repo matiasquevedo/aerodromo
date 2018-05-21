@@ -17,9 +17,8 @@ class ReservasController extends Controller
      */
     public function index()
     {
-        $events = [];
         $reservas = Reserva::all();
-        if ($reservas->count()) {
+        /*if ($reservas->count()) {
             foreach ($reservas as $key => $value) {
                 $events[] = Calendar::event(
                     $value->avion->modelo,
@@ -34,7 +33,10 @@ class ReservasController extends Controller
         $calendar = \Calendar::addEvents($events);
 
         //return view('')->with('calendar',$calendar);
-        return view('admin.reservas.index', compact('calendar'));
+        return view('admin.reservas.index', compact('calendar'));*/
+        $aviones = Avion::orderBy('modelo','ASC')->pluck('modelo','id');
+        $usuarios = User::orderBy('name','ASC')->pluck('name','id');
+        return view('admin.reservas.index')->with('reservas',$reservas)->with('aviones',$aviones)->with('usuarios',$usuarios);
 
 
     }
@@ -60,7 +62,7 @@ class ReservasController extends Controller
      */
     public function store(Request $request)
     {
-        //        dd($request);
+        //dd($request);
         $reserva = new Reserva($request->all());
         flash('Se ha reservado el avion: '. $reserva->avion->model . 'la fecha: '. $reserva->fecha);
         $reserva->save();
