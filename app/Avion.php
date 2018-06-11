@@ -15,4 +15,12 @@ class Avion extends Model
     	return $this->hasMany('App\Reserva');
     }
 
+    public function motor(){
+    	return $this->hasOne('App\Motor');
+    }
+
+        public function helice(){
+    	return $this->hasOne('App\Helice');
+    }
+
 }

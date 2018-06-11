@@ -64,6 +64,7 @@ class ReservasController extends Controller
     {
         //dd($request);
         $reserva = new Reserva($request->all());
+        $reserva->horas = $reserva->hora_hasta - $reserva->hora_desde;
         flash('Se ha reservado el avion: '. $reserva->avion->model . 'la fecha: '. $reserva->fecha);
         $reserva->save();
         return redirect()->route('reservas.index');

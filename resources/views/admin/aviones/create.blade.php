@@ -34,9 +34,57 @@
   			<div class="col-md-8">
 				<div class="form-group">
 				{!! Form::label('modelo','Modelo*') !!}<p><i>Minimo 8 Caracteres</i></p>
-				{!! Form::text('modelo',null,['class'=>'form-control','placeholder'=>'Titulo','required']) !!}
+				{!! Form::text('modelo',null,['class'=>'form-control','placeholder'=>'Modelo','required']) !!}
 				</div>
 			</div>
+
+  			<div class="col-md-8">
+  				<h3>Motor</h3>
+				<div class="form-group">
+				{!! Form::label('modeloMotor','Modelo Motor*') !!}<p><i>Minimo 8 Caracteres</i></p>
+				{!! Form::text('modeloMotor',null,['class'=>'form-control','placeholder'=>'Modelo Motor','required']) !!}
+				</div>
+			</div>
+
+  			<div class="col-md-8">
+				<div class="form-group">
+				{!! Form::label('numeracion','Numeración*') !!}<p><i>Minimo 8 Caracteres</i></p>
+				{!! Form::text('numeracion',null,['class'=>'form-control','placeholder'=>'Numeración','required']) !!}
+				</div>
+			</div>
+
+  			<div class="col-md-8">
+				<div class="form-group">
+				{!! Form::label('descripcionMotor','Descripción Motor*') !!}<p><i>Minimo 8 Caracteres</i></p>
+				{!! Form::text('descripcionMotor',null,['class'=>'form-control','placeholder'=>'Descripción Motor','required']) !!}
+				</div>
+			</div>
+
+  			<div class="col-md-8">
+				<h3>Helice</h3>
+				<div class="form-group">
+				{!! Form::label('modeloHelice','Modelo Helice*') !!}<p><i>Minimo 8 Caracteres</i></p>
+				{!! Form::text('modeloHelice',null,['class'=>'form-control','placeholder'=>'Modelo Helice','required']) !!}
+				</div>
+			</div>
+
+  			<div class="col-md-8">
+				<div class="form-group">
+				{!! Form::label('numeracionH','Numeración Helice*') !!}<p><i>Minimo 8 Caracteres</i></p>
+				{!! Form::text('numeracionH',null,['class'=>'form-control','placeholder'=>'Numeración Helice','required']) !!}
+				</div>
+			</div>
+
+  			<div class="col-md-8">
+				<div class="form-group">
+				{!! Form::label('descripcionH','Descripción Helice*') !!}<p><i>Minimo 8 Caracteres</i></p>
+				{!! Form::text('descripcionH',null,['class'=>'form-control','placeholder'=>'Descripción Helice','required']) !!}
+				</div>
+			</div>
+
+
+
+
 
 
   			<div class="col-md-4">

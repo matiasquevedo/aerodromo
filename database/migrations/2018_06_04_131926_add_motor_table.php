@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddReservaTable extends Migration
+class AddMotorTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,13 +14,11 @@ class AddReservaTable extends Migration
     public function up()
     {
         //
-        Schema::create('reservas', function (Blueprint $table) {
+        Schema::create('motores', function (Blueprint $table) {
             $table->increments('id');
-            $table->enum('state',['0','1','2'])->default('0');
-            $table->date('fecha');
-            $table->string('hora_desde');
-            $table->string('hora_hasta');
-            $table->string('horas');
+            $table->string('modelo');
+            $table->string('numeracion')->unique();
+            $table->string('descripcion');
             $table->integer('avion_id')->unsigned();
             $table->integer('user_id')->unsigned();
             $table->rememberToken();

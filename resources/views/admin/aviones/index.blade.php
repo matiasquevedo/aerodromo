@@ -15,6 +15,8 @@
   <thead>
     <tr>
       <th>Modelo</th>
+      <th>Motor</th>
+      <th>Helice</th>
       <th>Acción</th>
     </tr>
   </thead>
@@ -22,6 +24,8 @@
   	@foreach($aviones as $avion)
 		<tr>
 			<td><a href="{{ route('aviones.show', $avion->id) }}">{{$avion->modelo}}</a></td>
+      <td>{{$avion->motor->modelo}}</td>
+      <td>{{$avion->helice->modelo}}</td>
 			<td><a href="{{ route('aviones.edit', $avion->id) }}" class="btn btn-warning"><span class="glyphicon glyphicon-wrench"></span></a><a href="{{ route('aviones.destroy', $avion->id) }}" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></a></td>
 		</tr>
 

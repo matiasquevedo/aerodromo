@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Avion;
+use App\Motor;
+use App\Helice;
 
 class AvionController extends Controller
 {
@@ -38,10 +40,27 @@ class AvionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //        dd($request);
         $avion = new Avion($request->all());
-        //dd($avion);
         $avion->save();
+        $motor = new Motor();
+        $motor->modelo = $request->modeloMotor;
+        $motor->numeracion = $request->numeracion;
+        $motor->descripcion = $request->descripcionMotor;
+        $motor->avion_id = $avion->id;
+        $motor->user_id = \Auth::user()->id;
+
+        $helice = new Helice();
+        $helice->modelo = $request->modeloHelice;
+        $helice->numeracion = $request->numeracionH;
+        $helice->descripcion = $request->descripcionH;
+        $helice->avion_id = $avion->id;
+        $helice->user_id = \Auth::user()->id;
+
+        //dd($avion);
+        
+        $motor->save();
+        $helice->save();
         flash('Se ha creado el avion '.$avion->model)->success();
         return redirect()->route('aviones.index');
 
@@ -54,8 +73,12 @@ class AvionController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        //
+    {        
+        $avion = Avion::find($id);
+        //dd($avion->reserva);
+        $reservas=$avion->reserva;
+        return view('admin.aviones.show')->with('avion',$avion)->with('reservas',$reservas);
+
     }
 
     /**

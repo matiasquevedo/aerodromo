@@ -33,20 +33,20 @@
 		<div class="row">
   			<div class="col-md-8">
 				<div class="form-group">
-				{!! Form::label('fecha','Fecha*') !!}<p><i>Minimo 8 Caracteres</i></p>
+				{!! Form::label('fecha','Fecha*') !!}
 				{!! Form::date('fecha',null,['class'=>'form-control','placeholder'=>'Titulo','required']) !!}
 				</div>
 			</div>
 
 			<div class="col-md-8">
 				<div class="form-group">
-				{!! Form::label('hora_desde','Hora de Inicio*') !!}<p><i>Minimo 8 Caracteres</i></p>
-				{!! Form::text('hora_desde',null,['class'=>'form-control','placeholder'=>'Titulo','required']) !!}
+				{!! Form::label('hora_desde','Hora de Inicio*') !!}
+				{!! Form::text('hora_desde',null,['class'=>'form-control','placeholder'=>'Hora de Inicio','required']) !!}
 				</div>
 
 				<div class="form-group">
-				{!! Form::label('hora_hasta','Hora de Fin*') !!}<p><i>Minimo 8 Caracteres</i></p>
-				{!! Form::text('hora_hasta',null,['class'=>'form-control','placeholder'=>'Titulo','required']) !!}
+				{!! Form::label('hora_hasta','Hora de Fin*') !!}
+				{!! Form::text('hora_hasta',null,['class'=>'form-control','placeholder'=>'Hora de Fin','required']) !!}
 				</div>
 			</div>
   			<div class="col-md-4">
